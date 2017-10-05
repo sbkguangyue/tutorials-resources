@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.restlet.client</groupId>
+  <artifactId>data_validation</artifactId>
+  <version>1.0.0</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.restlet.client</groupId>
+        <artifactId>maven-plugin</artifactId>
+        <version>2.4.0</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <file>${test_file}</file>
+              <licenseKey>${license_key}</licenseKey>
+              <selectedEnvironment>${selected_environment}</selectedEnvironment>
+              <variables>
+                <!-- The variable API_KEY's value will be overwritten with the JVM argument api_key -->
+                <property>
+                  <name>API_KEY</name>
+                  <value>${api_key}</value>
+                </property>
+              </variables>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>restlet-public</id>
+      <name>Restlet Public Repository</name>
+      <url>http://maven.restlet.com</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
