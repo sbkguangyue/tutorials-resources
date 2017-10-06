@@ -26,7 +26,6 @@ node {
         withMaven(maven: 'Maven 3.5.0') {
           sh "mvn clean test -B \
           -Dapi_key=\"$CONTACTS_API_KEY\" \
-          -Dselected_environment='restlet-cloud' \
           -Dtest_file='src/test/resources/contacts_api_tests.json' \
           -Dlicense_key=\"$RESTLET_CLIENT_LICENSE\""
         }

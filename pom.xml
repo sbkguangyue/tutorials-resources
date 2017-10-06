@@ -21,9 +21,10 @@
               <goal>test</goal>
             </goals>
             <configuration>
+              <selectedEnvironment>restlet-cloud</selectedEnvironment>
+
               <file>${test_file}</file>
               <licenseKey>${license_key}</licenseKey>
-              <selectedEnvironment>${selected_environment}</selectedEnvironment>
               <variables>
                 <!-- The variable API_KEY's value will be overwritten with the JVM argument api_key -->
                 <property>
